@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 01:46:50 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:26:44 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 06:38:16 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Dog : public Animal
 {
 	private:
-		Brain	*brain;
+		Brain*	brain;
 
 	public:
 		Dog(void);
@@ -29,6 +29,9 @@ class Dog : public Animal
 		~Dog(void);
 		Dog&	operator=(Dog const& other);
 
+		Brain const*	getBrain(void) const;
+
+		Dog*	clone(void) const;
 		void	makeSound(void) const;
 };
 

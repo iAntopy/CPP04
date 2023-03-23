@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:10:33 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:01:35 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 06:27:08 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ Animal&	Animal::operator=(Animal const& other)
 
 std::string const&	Animal::getType(void) const {return (this->type);}
 
-void	Animal::setType(std::string const& newType) {this->type = newType;};
+void	Animal::setType(std::string const& newType) {this->type = newType;}
+
+Animal*	Animal::clone(void) const {return (new Animal(*this));}
 
 void	Animal::makeSound(void) const {
 	std::cout << "Generic Animal confused about its identity ..." << std::endl;}

@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 01:46:50 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 18:19:55 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 06:30:08 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ class Animal
 
 		std::string const&	getType(void) const;
 		void				setType(std::string const& newType);
+
+		virtual Animal*		clone(void) const;
 		virtual void		makeSound(void) const;
 };
+
+std::ostream&	operator<<(std::ostream& o, Animal const& inst);
 
 #endif

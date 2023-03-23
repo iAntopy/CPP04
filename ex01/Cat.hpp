@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:23:20 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:26:27 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 06:38:07 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain	*brain;
+		Brain*	brain;
 
 	public:
 		Cat(void);
@@ -29,6 +29,8 @@ class Cat : public Animal
 		~Cat(void);
 		Cat&	operator=(Cat const& other);
 
+		Brain const*	getBrain(void) const;
+		Cat*	clone(void) const;
 		void	makeSound(void) const;
 };
 

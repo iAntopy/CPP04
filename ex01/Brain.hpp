@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 20:19:37 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:24:50 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 05:18:50 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ class Brain
 	public:
 		Brain(void);
 		Brain(Brain const& other);
-		virtual ~Brain(void);
+		~Brain(void);
 
 		Brain&	operator=(Brain const& other);
 };
+
+std::ostream&	operator<<(std::ostream& o, Brain const& inst);
 
 #endif

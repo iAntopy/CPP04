@@ -6,15 +6,15 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 20:24:41 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:24:43 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/23 05:19:49 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-std::ostream&	operator<<(std::ostream& o, Brain const& a)
+std::ostream&	operator<<(std::ostream& o, Brain const& inst)
 {
-	o << "I AM BRAIN ! BOW BEFORE MY GREAT IDEADS !" << std::endl;
+	o << "I AM BRAIN ! BOW BEFORE MY GREAT IDEAS !" << std::endl;
 	return (o);
 }
 
