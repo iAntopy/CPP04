@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 01:46:50 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 02:41:58 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:05:45 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 
 class Dog : public Animal
 {
-	protected:
-		std::string	type;
-	
 	public:
 		Dog(void);
 		Dog(Dog const& other);
