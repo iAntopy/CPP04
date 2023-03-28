@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 11:48:25 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 19:37:45 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:59:13 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ AMateria::AMateria(void) : type("UNDEFINED")
 
 AMateria::AMateria(std::string const& typeName) : type(typeName)
 {
-	std::cout << "AMateria typed ctor : " << type << std::endl;
-	std::cout << "" << std::endl;
+	std::cout << std::endl << "AMateria typed ctor : " << type << std::endl;
 }
 
 AMateria::~AMateria(void) {std::cout << "AMateria dtor" << std::endl;}

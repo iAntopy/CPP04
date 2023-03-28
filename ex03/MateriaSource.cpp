@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 03:41:37 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/27 23:28:01 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:09:45 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,13 @@ void	MateriaSource::learnMateria(AMateria *m)
 AMateria*	MateriaSource::createMateria(std::string const& type)
 {
 	for (int i=0; i < MAX_MATERIA_STOCK; ++i)
+	{
 		if (materiaStock[i]->getType() == type)
+		{
+			std::cerr << "Materia " << type << " being created." << std::endl;
 			return (materiaStock[i]->clone());
+		}
+	}
+	std::cerr << "Materia " << type << " wasn't learned by MateriaSource." << std::endl;
 	return (nullptr);
 }

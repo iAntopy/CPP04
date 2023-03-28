@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:02:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/27 23:46:07 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:03:03 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,12 @@ int	main()
 	msource.learnMateria(new Ocarina());
 	msource.learnMateria(new Cure());
 	msource.learnMateria(new Ice());
-	msource.learnMateria(new Ice());
-	msource.learnMateria(new Ice());
+	msource.learnMateria(new Mushroom());
+	msource.learnMateria(new Ocarina());
 	msource.learnMateria(new Cure());
-	msource.learnMateria(new Ice());
-	msource.learnMateria(new Ice());
-	msource.learnMateria(new Cure());
-	msource.learnMateria(new Ice());
 
+	std::cout << std::endl << "Creating Materias from source and try equip by Herman : " << std::endl;
+	std::cout << "//------------------------------------\\\\" << std::endl;
 	herman.equip(msource.createMateria("ice"));
 	herman.equip(msource.createMateria("ICE"));
 	herman.equip(msource.createMateria(" cure "));
@@ -74,6 +72,7 @@ int	main()
 	herman.equip(msource.createMateria("ocarina"));
 	herman.equip(msource.createMateria("cure"));
 	herman.equip(msource.createMateria(""));
+	std::cout << "\\\\------------------------------------//" << std::endl;
 
 	herman.use(-1, herman);
 	herman.use(0, herman);
@@ -90,6 +89,7 @@ int	main()
 	herman.unequip(4);
 
 	std::cout << std::endl << "Linked List dump tests : " << std::endl;
+	std::cout << "//------------------------------------\\\\" << std::endl;
 	herman.equip(msource.createMateria("ice"));
 	herman.unequip(0);
 	herman.equip(msource.createMateria("ice"));
@@ -100,15 +100,16 @@ int	main()
 	herman.unequip(0);
 	
 	pickachu.equip(msource.createMateria("cure"));
-	herman.unequip(0);
+	pickachu.unequip(0);
 	pickachu.equip(msource.createMateria("cure"));
-	herman.unequip(0);
+	pickachu.unequip(0);
 	pickachu.equip(msource.createMateria("cure"));
-	herman.unequip(0);
+	pickachu.unequip(0);
 	pickachu.equip(msource.createMateria("cure"));
-	herman.unequip(0);
+	pickachu.unequip(0);
 	pickachu.equip(msource.createMateria("cure"));
-	herman.unequip(0);
+	pickachu.unequip(0);
+	std::cout << "\\\\------------------------------------//" << std::endl;
 	
 	subject_tests();
 

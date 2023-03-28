@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:02:17 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/27 23:54:10 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:57:15 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,28 +96,23 @@ static void	__copy_materia_bag(AMateria* dst[4], Character const& src)
 	}
 }
 
-static void	__dump_materia(MateriaDump **mdump, AMateria* garbage)
+static void	__dump_materia(MateriaDump **mdump, AMateria* m)
 {
 	MateriaDump*	begin;
 	MateriaDump*	tmp;
 
 	if (!mdump)
 		return ;
+	tmp = new MateriaDump;
+	tmp->m = m;
+	tmp->next = nullptr;
 	if (!*mdump)
-	{
-		tmp = new MateriaDump;
-		tmp->m = garbage;
-		tmp->next = nullptr;
 		*mdump = tmp;
-	}
 	else
 	{
 		begin = *mdump;
 		while (begin->next)
 			begin = begin->next;
-		tmp = new MateriaDump;
-		tmp->m = garbage;
-		tmp->next = nullptr;
 		begin->next = tmp;
 	}
 }
@@ -131,19 +126,22 @@ static void	__clear_materia_dump(MateriaDump** mdump)
 		return ;
 
 	dump = *mdump;
+	std::cout << "//------------------------------------\\\\" << std::endl;
 	std::cout << "Clearing character materia dump : " << dump << std::endl;
 	while (dump)
 	{
 		if (dump->m)
 		{
-			//std::cout << "deleteting materia " << dump->m->getType() << " from dump. " << std::endl;
-			//delete dump->m;
+			std::cout << "Deleteting materia " << dump->m->getType() << " from dump. " << std::endl;
+			delete dump->m;
 		}
 		tmp = dump->next;
 		delete dump;
 		dump = tmp;
 	}
 	*mdump = nullptr;
+	std::cout << "Materia dump cleared completely. " << std::endl << std::endl;	
+	std::cout << "\\\\------------------------------------//" << std::endl;
 }
 
 Character::Character(void) : name("ANONYMOUS")
@@ -222,6 +220,7 @@ void	Character::unequip(int idx)
 	{
 		std::cout << name << " unequiping " << tmp->getType() << " materia and putting it in dump." << std::endl;
 		__dump_materia(&this->mdump, tmp);
+		materiaBag[idx] = nullptr;
 	}
 }
 
