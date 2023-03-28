@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:02:17 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 05:33:09 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:54:10 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ std::ostream&	operator<<(std::ostream& o, Character const& inst)
 }
 
 static bool	__is_valid_index(int idx) {return (0 <= idx && idx < 4);}
+
+static void	__init_bag_to_null(AMateria* bag[4])
+{
+	for (int i=0; i < 4; ++i)
+		bag[i] = nullptr;
+}
 
 static int	__add_materia_to_bag(AMateria* bag[4], AMateria const* m)
 {
@@ -128,6 +134,11 @@ static void	__clear_materia_dump(MateriaDump** mdump)
 	std::cout << "Clearing character materia dump : " << dump << std::endl;
 	while (dump)
 	{
+		if (dump->m)
+		{
+			//std::cout << "deleteting materia " << dump->m->getType() << " from dump. " << std::endl;
+			//delete dump->m;
+		}
 		tmp = dump->next;
 		delete dump;
 		dump = tmp;
@@ -139,13 +150,14 @@ Character::Character(void) : name("ANONYMOUS")
 {
 	std::cout << "Character default ctor" << std::endl;
 	nbCharacters++;
+	__init_bag_to_null(materiaBag);
 }
 
 Character::Character(std::string const& fullname) : name(fullname)
 {
-	std::cout << "Character named ctor" << std::endl;
+	std::cout << "Character named " << fullname << " ctor" << std::endl;
 	nbCharacters++;
-	std::cout << "magicaBag[0] : " << materiaBag[0] << std::endl;
+	__init_bag_to_null(materiaBag);
 }
 
 

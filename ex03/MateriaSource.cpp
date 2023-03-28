@@ -6,19 +6,28 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 03:41:37 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 04:41:06 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:28:01 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void) {std::cout << "MateriaSource default ctor" << std::endl;}
+MateriaSource::MateriaSource(void)
+{
+	std::cout << "MateriaSource default ctor" << std::endl;
+	for (int i=0; i < MAX_MATERIA_STOCK; ++i)
+		materiaStock[i] = nullptr;
+}
 
 MateriaSource::MateriaSource(MateriaSource const& other)
 {
 	for (int i=0; i < MAX_MATERIA_STOCK; ++i)
+	{
 		if (other.materiaStock[i])
 			materiaStock[i] = other.materiaStock[i]->clone();
+		else
+			materiaStock[i] = nullptr;
+	}
 }
 
 MateriaSource::~MateriaSource(void)

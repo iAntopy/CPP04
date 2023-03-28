@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 03:59:57 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 04:38:29 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:35:18 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria*	materiaStock[MAX_MATERIA_STOCK] = {0};
+		AMateria*	materiaStock[MAX_MATERIA_STOCK];
 
 	public:
 		MateriaSource(void);

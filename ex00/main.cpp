@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:26:18 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 20:14:25 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 22:19:17 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+
+
+
 
 	std::cout << std::endl << "WRONGANIMAL TESTS : " << std::endl;
 	std::cout << "Meta WrongAnimal creation : " << std::endl;

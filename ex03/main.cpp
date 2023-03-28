@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:02:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/24 06:00:24 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:46:07 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,27 @@ int	main()
 	herman.unequip(3);
 	herman.unequip(4);
 
+	std::cout << std::endl << "Linked List dump tests : " << std::endl;
+	herman.equip(msource.createMateria("ice"));
+	herman.unequip(0);
+	herman.equip(msource.createMateria("ice"));
+	herman.unequip(0);
+	herman.equip(msource.createMateria("ice"));
+	herman.unequip(0);
+	herman.equip(msource.createMateria("ice"));
+	herman.unequip(0);
+	
+	pickachu.equip(msource.createMateria("cure"));
+	herman.unequip(0);
+	pickachu.equip(msource.createMateria("cure"));
+	herman.unequip(0);
+	pickachu.equip(msource.createMateria("cure"));
+	herman.unequip(0);
+	pickachu.equip(msource.createMateria("cure"));
+	herman.unequip(0);
+	pickachu.equip(msource.createMateria("cure"));
+	herman.unequip(0);
+	
 	subject_tests();
 
 	return (EXIT_SUCCESS);

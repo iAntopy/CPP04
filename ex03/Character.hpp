@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:46:36 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 16:17:30 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:35:13 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 struct MateriaDump
 {
-	AMateria*	m;
+	AMateria*		m;
 	MateriaDump*	next;
 };
 
@@ -28,9 +28,9 @@ class Character : public ICharacter
 {
 	private:
 		static MateriaDump*	mdump;
-		static int		nbCharacters;
+		static int			nbCharacters;
 		std::string const	name;
-		AMateria*		materiaBag[4] = {0};
+		AMateria*			materiaBag[4];
 
 	public:
 		Character(void);

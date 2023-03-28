@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:23:20 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 10:51:26 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:00:51 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cat : public Animal
 		~Cat(void);
 		Cat&	operator=(Cat const& other);
 
-		Brain const*	getBrain(void) const;
+//		Brain const*	getBrain(void) const;
 		void				setIdea(uint32_t i, std::string const& idea);
 		std::string const&		getIdea(uint32_t i) const;
 		void				printIdea(uint32_t i) const;

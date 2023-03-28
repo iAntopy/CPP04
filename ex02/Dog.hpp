@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 01:46:50 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 10:50:41 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:00:58 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Dog : public Animal
 		~Dog(void);
 		Dog&	operator=(Dog const& other);
 
-		Brain const*			getBrain(void) const;
+//		Brain const*			getBrain(void) const;
 		void				setIdea(uint32_t i, std::string const& idea);
 		std::string const&		getIdea(uint32_t i) const;
 		void				printIdea(uint32_t i) const;

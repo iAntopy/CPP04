@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:23:52 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 06:27:32 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 22:30:00 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ std::ostream&	operator<<(std::ostream& o, Cat const& c)
 Cat::Cat(void) : Animal("Cat"), brain(new Brain()) {
 	std::cout << this->getType() << " default constructor called. type : " << this->getType() << std::endl;}
 
-Cat::Cat(Cat const& other) : Animal(other.getType()), brain(new Brain(*other.getBrain())) {
+Cat::Cat(Cat const& other) : Animal(other.getType()), brain(new Brain(*other.brain)) {
 	std::cout << this->getType() << " copy constructor called." << std::endl;}
 
 Cat::~Cat(void) {
-	delete this->brain;
+	if (brain)
+		delete this->brain;
 	std::cout << this->getType() << " destructor called." << std::endl;}
 
 Cat&	Cat::operator=(Cat const& other)
@@ -36,11 +37,11 @@ Cat&	Cat::operator=(Cat const& other)
 	this->setType(other.getType());
 
 	delete brain;
-	brain = new Brain(*other.getBrain());
+	brain = new Brain(*other.brain);
 	return (*this);
 }
 
-Brain const*	Cat::getBrain(void) const {return (this->brain);}
+//Brain const*	Cat::getBrain(void) const {return (this->brain);}
 
 Cat*	Cat::clone() const {return (new Cat(*this));}
 void	Cat::makeSound(void) const {std::cout << this->getType() << " says Meow !" << std::endl;}

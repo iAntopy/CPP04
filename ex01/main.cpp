@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 02:26:18 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/23 06:49:49 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/27 22:54:19 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,18 @@ void	optional_deepcopy_tests(Animal **animalFarm)
 
 	std::cout << std::endl << "TESTING DEEPCOPY OF ALL ANIMALS IN ANIMALFARM :" << std::endl;
 
-	std::cout << "Copying all animals in animalFarm :\n{" << std::endl;
+	std::cout << "Copying all animals in animalFarm + makeSound() :" << std::endl;
+	std::cout << "//--------------------------------------------------\\\\" << std::endl;
 	for (i = 0; i < ARR_LEN; ++i)
+	{
 		farmVille[i] = animalFarm[i]->clone();
-
-	std::cout << "}" << std::endl << "Deleting all Copy Animals :\n{" << std::endl;
+		farmVille[i]->makeSound();
+	}
+	std::cout << std::endl << std::endl << "Deleting all Copy Animals :" << std::endl;
 	for (i = 0; i < ARR_LEN; ++i)
-		delete farmVille[i];
-	std::cout << "}" << std::endl;
+		if (farmVille[i])
+			delete farmVille[i];
+	std::cout << "\\\\--------------------------------------------------//" << std::endl;
 }
 
 int main()
@@ -45,11 +49,12 @@ int main()
 		animalFarm[i] = new Cat();
 
 	/* Uncomment next line to test deepcopy of polymorphic animals array */
-	//optional_deepcopy_tests(animalFarm); 
+	optional_deepcopy_tests(animalFarm); 
 
 	std::cout << std::endl << "Deleting all Animals :" << std::endl;
 	for (i = 0; i < ARR_LEN; ++i)
-		delete animalFarm[i];
+		if (animalFarm[i])
+			delete animalFarm[i];
 
 	return (EXIT_SUCCESS);
 }
